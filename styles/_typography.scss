@@ -3,6 +3,9 @@
         font-size: 3rem;
         letter-spacing: -1px;
         line-height: 3.5rem;
+        &__sub {
+            color: var(--color-white);
+        }
     }
 }
 p {

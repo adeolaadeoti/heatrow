@@ -152,7 +152,115 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
           </div>
         </section>
+        <section className='section-feedback'>
+          <div className='feedback-container'>
+            <div className='feedback-left'>
+              <h2 className='heading-2'>
+                What Others <br /> are saying
+              </h2>
+            </div>
+            <div className='feedback-right'>
+              <div className='feedback-box'>
+                <img src='svg/quoute-icon.svg' alt='quoute icon' />
+                <p className='paragraph'>
+                  I love the fact that there is a linking road in Mabushi opposite blue Cabana which
+                  is really amazing. I love the road network and the structure is impressive.
+                </p>
+                <h5 className='heading-5'>Mr & Mrs Bamidele</h5>
+              </div>
+              <div className='feedback-box'>
+                <img src='svg/quoute-icon.svg' alt='quoute icon' />
+                <p className='paragraph'>
+                  So far so good, services really fantastic and the area is fantastic. The quality
+                  of work is fantastic and I look forward to a more beneficial relationship.
+                  Cosgrove equals fantastic for me.
+                </p>
+                <h5 className='heading-5'>Ojo Daniel</h5>
+              </div>
+              <div className='feedback-box'>
+                <img src='svg/quoute-icon.svg' alt='quoute icon' />
+                <p className='paragraph'>
+                  Not bad I visited your site and was a bit confused about the villa and detached
+                  spacing but thanks to the officer in charge I got clarification. I am actually an
+                  ambassador for Cosgrove because I believe in the brand.
+                </p>
+                <h5 className='heading-5'>Mr & Mrs Joseph</h5>
+              </div>
+              <div className='feedback-box'>
+                <img src='svg/quoute-icon.svg' alt='quoute icon' />
+                <p className='paragraph'>
+                  I love the fact that there is a linking road in Mabushi opposite blue Cabana which
+                  is really amazing. I love the road network and the structure is impressive.
+                </p>
+                <h5 className='heading-5'>Mr & Mrs Danladi</h5>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <footer className='footer'>
+        <div className='footer__container'>
+          <div className='footer__top'>
+            <h2 className='heading-2 heading-2__sub'>Book Consultation</h2>
+            <form className='contact-form'>
+              <div className='contact-form__left'>
+                <input type='text' placeholder='enter your name' />
+                <input type='email' placeholder='enter your email' />
+                <input type='tel' placeholder='enter your telephone' />
+              </div>
+              <div className='contact-form__right'>
+                <textarea placeholder='write something...'></textarea>
+                <button type='submit'>SEND MESSAGE</button>
+              </div>
+            </form>
+          </div>
+
+          <div className='footer__bottom'>
+            <div className='footer__bottom--box'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='102'
+                height='35.674'
+                viewBox='0 0 152 35.674'>
+                <g transform='translate(-66 -71.663)'>
+                  <g transform='translate(5929.179 -1324.144)'>
+                    <path d='M-5839.528,1412.126l-23.651,19.29v-35.609h23.651Z' fill='#FABE7D' />
+                    <path
+                      d='M-5789.339,1415.3l23.651-19.29v35.609h-23.651Z'
+                      transform='translate(-50.491 -0.14)'
+                      fill='#FABE7D'
+                    />
+                  </g>
+                  <text
+                    transform='translate(132 99)'
+                    fill='#FABE7D'
+                    fontSize='24'
+                    fontFamily='HelveticaNeue-Medium, Helvetica Neue'
+                    fontWeight='500'
+                    letterSpacing='-0.053em'>
+                    <tspan x='0' y='0'>
+                      Heatrow
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+              <p className='footer-p'>
+                +234813 900 1052
+                <br />
+                <br />
+                +234802 830 1153
+              </p>
+            </div>
+            <div className='footer__bottom--box'>
+              <p className='footer-p'>
+                1st Floor, Mujjab El Yakub Building, Danladi Street, <br/>Central Business District
+                Abuja. FCT Nigeria.
+              </p>
+            </div>
+          </div>
+          <p className='footer-copyright'>© Copyright 2021 Heatrow Estate</p>
+        </div>
+      </footer>
     </>
   )
 }
