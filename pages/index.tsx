@@ -118,36 +118,38 @@ const index: React.FC<indexProps> = ({}) => {
           </div>
         </section>
         <section className='section-gallery'>
-          <h2 className='heading-2'>
-            Live in the <br /> Future
-          </h2>
-          <div className='gallery'>
-            <div className='gallery__left'>
-              <div className='gallery__left--top'>
-                <img src='webp/villa-bg.webp' alt='villa image' />
-                <h4 className='gallery-caption'>15 villa</h4>
-              </div>
-              <div className='gallery__left--bottom'>
-                <h3 className='gallery-h3'>
-                  Comrfort <br /> is a choice
-                </h3>
-                <p className='gallery-p'>and we offer 4 of those</p>
-              </div>
-            </div>
-            <div className='gallery__right'>
-              <div className='gallery__right--top'>
-                <div className='gallery__right--top-left'>
-                  <img src='webp/oak-bg.webp' alt='oak image' />
-                  <h4 className='gallery-caption'>155 oak</h4>
+          <div className='gallery-container'>
+            <h2 className='heading-2'>
+              Live in the <br /> Future
+            </h2>
+            <div className='gallery'>
+              <div className='gallery__left'>
+                <div className='gallery__left--top'>
+                  <img src='webp/villa-bg.webp' alt='villa image' />
+                  <h4 className='gallery-caption'>15 villa</h4>
                 </div>
-                <div className='gallery__right--top-right'>
-                  <img src='webp/oakville-bg.webp' alt='oakville image' />
-                  <h4 className='gallery-caption'>30 oakville</h4>
+                <div className='gallery__left--bottom'>
+                  <h3 className='gallery-h3'>
+                    Comrfort <br /> is a choice
+                  </h3>
+                  <p className='gallery-p'>and we offer 4 of those</p>
                 </div>
               </div>
-              <div className='gallery__right--bottom'>
-                <img src='webp/maple.webp' alt='maple image' />
-                <h4 className='gallery-caption'>234 maple</h4>
+              <div className='gallery__right'>
+                <div className='gallery__right--top'>
+                  <div className='gallery__right--top-left'>
+                    <img src='webp/oak-bg.webp' alt='oak image' />
+                    <h4 className='gallery-caption'>155 oak</h4>
+                  </div>
+                  <div className='gallery__right--top-right'>
+                    <img src='webp/oakville-bg.webp' alt='oakville image' />
+                    <h4 className='gallery-caption'>30 oakville</h4>
+                  </div>
+                </div>
+                <div className='gallery__right--bottom'>
+                  <img src='webp/maple.webp' alt='maple image' />
+                  <h4 className='gallery-caption'>234 maple</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -253,8 +255,8 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
             <div className='footer__bottom--box'>
               <p className='footer-p'>
-                1st Floor, Mujjab El Yakub Building, Danladi Street, <br/>Central Business District
-                Abuja. FCT Nigeria.
+                1st Floor, Mujjab El Yakub Building, Danladi Street, <br />
+                Central Business District Abuja. FCT Nigeria.
               </p>
             </div>
           </div>
