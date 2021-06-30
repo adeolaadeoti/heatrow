@@ -49,6 +49,8 @@ const index: React.FC<indexProps> = ({}) => {
       el: refScroll.current,
       smooth: true,
       smoothMobile: true,
+      // inertia: 0.3,
+      multiplier: 0.65,
     })
   }, [refScroll])
 
@@ -60,18 +62,19 @@ const index: React.FC<indexProps> = ({}) => {
         el: refScroll.current,
         smooth: true,
         smoothMobile: true,
-        inertia: 0.5,
+        // inertia: 0.3,
+        multiplier: 0.65,
       })
     }, 100)
   }
 
   return (
-    <motion.div ref={refScroll} initial='initial' animate='animate'>
+    <motion.div data-scroll-container ref={refScroll} initial='initial' animate='animate'>
       <Head>
         <title>Heatrow &mdash; A Real Estate Company</title>
         <link rel='icon' href='/vercel.svg' />
       </Head>
-      <header className='home-header'>
+      <header data-scroll-section className='home-header'>
         <div className='home-header__left'>
           <nav className='navigation'>
             <motion.img
@@ -87,10 +90,14 @@ const index: React.FC<indexProps> = ({}) => {
                 </a>
               </motion.li>
               <motion.li variants={navItem} className='navigation__item'>
-                <a onClick={updateScroll} href='#sectionGallery'>Services</a>
+                <a onClick={updateScroll} href='#sectionGallery'>
+                  Services
+                </a>
               </motion.li>
               <motion.li variants={navItem} className='navigation__item'>
-                <a onClick={updateScroll} href='#sectionFeedback'>Feedbacks</a>
+                <a onClick={updateScroll} href='#sectionFeedback'>
+                  Feedbacks
+                </a>
               </motion.li>
             </motion.ul>
           </nav>
@@ -136,7 +143,7 @@ const index: React.FC<indexProps> = ({}) => {
         </div>
       </header>
       <main className='main'>
-        <section id='sectionFeatures' className='section-features'>
+        <section data-scroll-section id='sectionFeatures' className='section-features'>
           <div className='feature-container'>
             <div className='feature'>
               <img src='svg/faces-icon.svg' alt='face icon' />
@@ -209,7 +216,7 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
           </div>
         </section>
-        <section id='sectionGallery' className='section-gallery'>
+        <section data-scroll-section id='sectionGallery' className='section-gallery'>
           <div className='gallery-container'>
             <h2 className='heading-2'>
               Live in the <br /> Future
@@ -246,7 +253,7 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
           </div>
         </section>
-        <section id='sectionFeedback' className='section-feedback'>
+        <section data-scroll-section id='sectionFeedback' className='section-feedback'>
           <div className='feedback-container'>
             <div className='feedback-left'>
               <h2 className='heading-2'>
@@ -292,7 +299,7 @@ const index: React.FC<indexProps> = ({}) => {
           </div>
         </section>
       </main>
-      <footer className='footer'>
+      <footer data-scroll-section className='footer'>
         <div className='footer__container'>
           <div className='footer__top'>
             <h2 className='heading-2 heading-2__sub'>Book Consultation</h2>
