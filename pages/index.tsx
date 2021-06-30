@@ -48,7 +48,12 @@ const index: React.FC<indexProps> = ({}) => {
     scroll = new locomotiveScroll({
       el: refScroll.current,
       smooth: true,
-      smoothMobile: true,
+      smartphone: {
+        smooth: true,
+      },
+      tablet: {
+        smooth: true,
+      },
       // inertia: 0.3,
       multiplier: 0.65,
     })
@@ -61,7 +66,12 @@ const index: React.FC<indexProps> = ({}) => {
       scroll = new locomotiveScroll({
         el: refScroll.current,
         smooth: true,
-        smoothMobile: true,
+        smartphone: {
+          smooth: true,
+        },
+        tablet: {
+          smooth: true,
+        },
         // inertia: 0.3,
         multiplier: 0.65,
       })
