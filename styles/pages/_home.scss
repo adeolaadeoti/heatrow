@@ -30,8 +30,13 @@
       &__item {
         margin-left: 2rem;
         list-style-type: none;
-        font-size: 1.4rem;
         cursor: pointer;
+
+        a {
+          font-size: 1.4rem;
+          color: inherit;
+          text-decoration: none;
+        }
       }
     }
     .home-hero {

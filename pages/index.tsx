@@ -1,11 +1,44 @@
 import React from 'react'
 import Head from 'next/head'
+import { motion } from 'framer-motion'
 
 interface indexProps {}
 
+const transition: { duration: number; ease: number[] } = {
+  duration: 1.4,
+  ease: [0.6, 0.01, -0.05, 0.9],
+}
+
+const navList: { initial: any; animate: any } = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: 0,
+    delay: 1.8,
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.04,
+      staggerDirection: 1,
+    },
+  },
+}
+
+const navItem: { initial: any; animate: any } = {
+  initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { ...transition },
+  },
+}
+
 const index: React.FC<indexProps> = ({}) => {
   return (
-    <>
+    <motion.div initial='initial' animate='animate'>
       <Head>
         <title>Heatrow &mdash; A Real Estate Company</title>
         <link rel='icon' href='/vercel.svg' />
@@ -13,38 +46,67 @@ const index: React.FC<indexProps> = ({}) => {
       <header className='home-header'>
         <div className='home-header__left'>
           <nav className='navigation'>
-            <img src='svg/heatrow-logo.svg' alt='heatrow logo' />
-            <ul className='navigation__list'>
-              <li className='navigation__item'>Home</li>
-              <li className='navigation__item'>Features</li>
-              <li className='navigation__item'>Services</li>
-              <li className='navigation__item'>Contact Us</li>
-            </ul>
+            <motion.img
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1, transition: { ...transition } }}
+              src='svg/heatrow-logo.svg'
+              alt='heatrow logo'
+            />
+            <motion.ul variants={navList} className='navigation__list'>
+              <motion.li variants={navItem} className='navigation__item'>
+                <a href='#sectionFeatures'>Features</a>
+              </motion.li>
+              <motion.li variants={navItem} className='navigation__item'>
+                <a href='#sectionGallery'>Services</a>
+              </motion.li>
+              <motion.li variants={navItem} className='navigation__item'>
+                <a href='#sectionFeedback'>Feedbacks</a>
+              </motion.li>
+            </motion.ul>
           </nav>
           <div className='home-hero'>
-            <h4 className='hero-h4'>
+            <motion.h4
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { delay: 0.2, ...transition } }}
+              className='hero-h4'>
               elegantly designed 3 <br />
               bedroom apartments
-            </h4>
-            <h1 className='hero-h1'>Maple</h1>
-            <div className='home-hero__footer'>
+            </motion.h4>
+            <motion.h1
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { delay: 0.6, ...transition } }}
+              className='hero-h1'>
+              Maple
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { delay: 0.6, ...transition } }}
+              className='home-hero__footer'>
               <img src='svg/facebook-icon.svg' alt='facebook icon' />
               <img src='svg/twitter-icon.svg' alt='twitter icon' />
               <img src='svg/linkedIn-icon.svg' alt='linkedIn icon' />
               <img src='svg/instagram-icon.svg' alt='instagram icon' />
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className='home-header__right'>
-          <img src='webp/header-bg.webp' alt='maple house' />
-          <div className='hero-unit'>
+          <motion.img
+            initial={{ opacity: 0, scale: 1.4, x: 400 }}
+            animate={{ opacity: 1, scale: 1, x: 0, transition: { delay: 1.1, ...transition } }}
+            src='webp/header-bg.webp'
+            alt='maple house'
+          />
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { delay: 1.8, ...transition } }}
+            className='hero-unit'>
             <h2 className='hero-unit__h2'>444</h2>
             <p className='hero-unit__p'>TOTAL UNITS</p>
-          </div>
+          </motion.div>
         </div>
       </header>
       <main className='main'>
-        <section className='section-features'>
+        <section id='sectionFeatures' className='section-features'>
           <div className='feature-container'>
             <div className='feature'>
               <img src='svg/faces-icon.svg' alt='face icon' />
@@ -117,7 +179,7 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
           </div>
         </section>
-        <section className='section-gallery'>
+        <section id='sectionGallery' className='section-gallery'>
           <div className='gallery-container'>
             <h2 className='heading-2'>
               Live in the <br /> Future
@@ -154,7 +216,7 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
           </div>
         </section>
-        <section className='section-feedback'>
+        <section id='sectionFeedback' className='section-feedback'>
           <div className='feedback-container'>
             <div className='feedback-left'>
               <h2 className='heading-2'>
@@ -263,7 +325,7 @@ const index: React.FC<indexProps> = ({}) => {
           <p className='footer-copyright'>© Copyright 2021 Heatrow Estate</p>
         </div>
       </footer>
-    </>
+    </motion.div>
   )
 }
 

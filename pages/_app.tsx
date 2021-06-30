@@ -13,15 +13,20 @@ function MyApp({ Component, pageProps }: any) {
   const router = useRouter()
   const scrollRef = React.useRef<HTMLDivElement>(null)
 
-  // React.useEffect(() => {
-  //   import('locomotive-scroll').then(locomotiveModule => {
-  //     // @ts-ignore
-  //     const scroll = new locomotiveModule.default({
-  //       el: scrollRef.current,
-  //       smooth: true,
-  //     })
-  //   })
-  // }, [])
+  React.useEffect(() => {
+    import('locomotive-scroll').then(locomotiveModule => {
+      // @ts-ignore
+      const scroll = new locomotiveModule.default({
+        el: scrollRef.current,
+        smooth: true,
+        inertia: 0.5,
+      })
+
+      scroll.smartphone.smooth = true
+      // console.log()
+
+    })
+  }, [])
 
   return (
     <div ref={scrollRef}>
