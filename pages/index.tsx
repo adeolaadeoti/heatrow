@@ -55,7 +55,7 @@ const index: React.FC<indexProps> = ({}) => {
         smooth: true,
       },
       // inertia: 0.3,
-      multiplier: 0.65,
+      // multiplier: 0.65,
     })
   }, [refScroll])
 
@@ -73,7 +73,7 @@ const index: React.FC<indexProps> = ({}) => {
           smooth: true,
         },
         // inertia: 0.3,
-        multiplier: 0.65,
+        // multiplier: 0.65,
       })
     }, 100)
   }
