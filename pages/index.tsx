@@ -36,9 +36,37 @@ const navItem: { initial: any; animate: any } = {
   },
 }
 
+const locomotiveScroll = typeof window !== `undefined` ? require('locomotive-scroll').default : null
+
 const index: React.FC<indexProps> = ({}) => {
+  const refScroll = React.useRef(null)
+  let scroll: any
+
+  React.useEffect(() => {
+    if (!refScroll.current) return
+    // @ts-ignore
+    scroll = new locomotiveScroll({
+      el: refScroll.current,
+      smooth: true,
+      smoothMobile: true,
+    })
+  }, [refScroll])
+
+  function updateScroll() {
+    scroll.destroy()
+
+    setTimeout(function () {
+      scroll = new locomotiveScroll({
+        el: refScroll.current,
+        smooth: true,
+        smoothMobile: true,
+        inertia: 0.5,
+      })
+    }, 100)
+  }
+
   return (
-    <motion.div initial='initial' animate='animate'>
+    <motion.div ref={refScroll} initial='initial' animate='animate'>
       <Head>
         <title>Heatrow &mdash; A Real Estate Company</title>
         <link rel='icon' href='/vercel.svg' />
@@ -54,13 +82,15 @@ const index: React.FC<indexProps> = ({}) => {
             />
             <motion.ul variants={navList} className='navigation__list'>
               <motion.li variants={navItem} className='navigation__item'>
-                <a href='#sectionFeatures'>Features</a>
+                <a onClick={updateScroll} href='#sectionFeatures'>
+                  Features
+                </a>
               </motion.li>
               <motion.li variants={navItem} className='navigation__item'>
-                <a href='#sectionGallery'>Services</a>
+                <a onClick={updateScroll} href='#sectionGallery'>Services</a>
               </motion.li>
               <motion.li variants={navItem} className='navigation__item'>
-                <a href='#sectionFeedback'>Feedbacks</a>
+                <a onClick={updateScroll} href='#sectionFeedback'>Feedbacks</a>
               </motion.li>
             </motion.ul>
           </nav>
